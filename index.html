@@ -92,7 +92,7 @@
             <div class="fc-from">Nives, vaša knjigovođa</div>
             <div class="fc-msg">Vaše knjige su gotove <span>&rarr;</span></div>
             <div class="fc-reply">
-              hvala, spasite me! &#127881;
+              hvala, spasili ste me! &#127881;
               <div class="fc-avatar"></div>
             </div>
           </div>
@@ -113,6 +113,34 @@
     <h2 class="h2">Vodim knjige, pratim rokove i uvijek sam dostupna —<br>da vi možete raditi ono u čemu ste dobri.</h2>
     <p class="sub" style="margin-top:20px;">Bez žurbe, bez pogrešaka, bez stresa. Detaljna, točna i precizna usluga prilagođena svakom klijentu — jer svaki obrt je poseban.</p>
   </div>
+
+  <!-- MOBILE TABS (hidden on desktop) -->
+  <div class="feat-mobile-tabs">
+    <div class="fmt-nav">
+      <button class="fmt-tab active" onclick="featTab(this,0)">Knjiga prometa</button>
+      <button class="fmt-tab" onclick="featTab(this,1)">Porezi i doprinosi</button>
+      <button class="fmt-tab" onclick="featTab(this,2)">Proračunsko</button>
+    </div>
+    <div class="fmt-panel active">
+      <div class="feat-big-title">Svaki prihod zabilježen — uvijek točno i na vrijeme</div>
+      <div class="feat-big-desc">Vodim vašu knjigu prometa, izlazne račune i kartice — i šaljem vam sve podatke potrebne za plaćanje poreza i doprinosa svaki mjesec, bez iznimke.</div>
+    </div>
+    <div class="fmt-panel">
+      <div class="feat-big-title">Uvijek znate što i kada platiti</div>
+      <div class="feat-big-desc">Svaki mjesec šaljem vam točne podatke za plaćanje poreza i doprinosa — bez iznenađenja, bez zakašnjenja, uz telefonsko savjetovanje kad god zatrebate.</div>
+    </div>
+    <div class="fmt-panel">
+      <div class="feat-big-title">Usklade i izvještaji — sve u roku</div>
+      <div class="feat-big-desc">Tromjesečni izvještaji, knjiženja i usklade za proračunske korisnike. U redu, na vrijeme — da se vi možete fokusirati na svoj posao.</div>
+    </div>
+  </div>
+  <script>
+    function featTab(btn, idx) {
+      btn.closest('.fmt-nav').querySelectorAll('.fmt-tab').forEach(function(t){ t.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.closest('.feat-mobile-tabs').querySelectorAll('.fmt-panel').forEach(function(p, i){ p.classList.toggle('active', i === idx); });
+    }
+  </script>
 
   <div style="max-width:1180px;margin:0 auto;">
 
@@ -408,30 +436,53 @@
 </section>
 
 <!-- O NIVES -->
-<section class="section" style="background:var(--white);">
+<section class="section" style="background:#5931dc;">
   <div class="container">
     <div class="team-head">
       <div class="label">Tko stoji iza uPlus?</div>
-      <h2 class="h2">Knjigovodstvo s ljudskim licem.</h2>
-      <p class="sub" style="margin-top:14px;max-width:620px;">Nisam samo vaša knjigovođa — tu sam da razumijem vaš posao i pomognem vam da napredujete. Ponekad se osjećam kao psiholog iz područja financija.</p>
+      <h2 class="h2" style="color:#fff;">Knjigovodstvo s ljudskim licem.</h2>
+      <p class="sub" style="margin-top:14px;max-width:620px;color:#fff;">Nisam samo vaša knjigovođa — tu sam da razumijem vaš posao i pomognem vam da napredujete. Ponekad se osjećam kao psiholog iz područja financija.</p>
     </div>
-    <div class="about-strip">
-      <div class="about-photo-wrap">
-        <img src="images/658877332_837743762664508_3341075905555478925_n.jpg" alt="Nives Lovrić" class="about-photo" />
-      </div>
-      <div class="about-body">
-        <div class="about-name">Nives Lovrić</div>
-        <div class="about-role">Vlasnica i osnivačica &middot; Zaprešić</div>
-        <p class="about-bio">Obrt za knjigovodstvo i savjetovanje. Radim s paušalnim obrtnicima i proračunskim ustanovama — precizno, pouzdano i uvijek na usluzi.</p>
-        <p class="about-bio">Želim biti drugačija računovođa — moj pristup je topao i osoban jer financije ne moraju biti dosadne. Radim pažljivo, kontinuirano i uvijek sam dostupna za pitanja.</p>
-        <br>
-		<p class="about-bio about-quote">"Izazovno mi je kad kaos moram dovesti u red. Najbolji osjećaj je kad se na kraju sve poklopi."</p>
-        <div class="about-tags">
-          <span class="about-tag">Pedantno</span>
-          <span class="about-tag">Točno</span>
-          <span class="about-tag">Uvijek dostupna</span>
+    <div class="about-bento">
+
+      <!-- Left: tall, white, photo at bottom -->
+      <div class="abt-left">
+        <div class="abt-text">
+          <div class="abt-name">Nives Lovrić</div>
+          <div class="abt-role">Vlasnica i osnivačica</div>
+          <p>Obrt za knjigovodstvo i savjetovanje. Radim s paušalnim obrtnicima — precizno, pouzdano i uvijek na usluzi.</p>
+        </div>
+        <div class="abt-photo-area">
+          <div class="abt-circle"></div>
+          <img src="images/672341284_852888567816694_7457869509467304666_n.jpg" alt="Nives Lovrić" class="abt-photo" />
+          <div class="abt-photo-fade"></div>
         </div>
       </div>
+
+      <!-- Top right: dark navy -->
+      <div class="abt-tr" style="background:#281350;">
+        <div class="abt-tr-text">
+          <h3 class="abt-h3">Moj pristup</h3>
+          <p>Financije ne moraju biti dosadne. Topla sam i osobna, uvijek dostupna za vaša pitanja — bez čekanja i žargona.</p>
+          <p>Svaki od ovih izazova zahtijeva poseban pristup. Bez obzira na kategoriju — uvijek prilagođavam uslugu onome što vaš posao stvarno treba.</p>
+        </div>
+        <div class="abt-bars">
+          <div class="abt-bar" style="top:8%;  right:0;   width:55%"></div>
+          <div class="abt-bar" style="top:22%; right:22%; width:70%"></div>
+          <div class="abt-bar" style="top:36%; right:5%;  width:42%"></div>
+          <div class="abt-bar" style="top:50%; right:28%; width:62%"></div>
+          <div class="abt-bar" style="top:64%; right:8%;  width:80%"></div>
+          <div class="abt-bar" style="top:78%; right:18%; width:48%"></div>
+        </div>
+      </div>
+
+      <!-- Bottom right: light purple -->
+      <div class="abt-br">
+        <h3 class="abt-h3-purple">Počnimo razgovor</h3>
+        <p>"Izazovno mi je kad kaos moram dovesti u red. Najbolji osjećaj je kad se na kraju sve poklopi."</p>
+        <a href="mailto:nives.uplus@gmail.com" class="btn btn-primary">Pišite mi</a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -442,31 +493,88 @@
     <div class="growth-head">
       <div class="label">Za koga radim</div>
       <h2 class="h2">Bez obzira jeste li početnik ili iskusan obrtnik &mdash; imam rješenje za vas.</h2>
-      <p class="sub" style="margin-top:14px;max-width:620px;">Svaki klijent je poseban. Prilagođavam se vašim potrebama i tempu — bez žurbe i bez kompromisa na kvaliteti.</p>
+      <p class="sub" style="margin-top:14px;max-width:640px;">Svaki klijent je poseban. Prilagođavam se vašim potrebama i tempu — bez žurbe i bez kompromisa na kvaliteti.</p>
+      <p class="growth-scenarios-label">Scenariji u kojima pomažem:</p>
     </div>
     <div class="growth-grid">
+
       <div class="gc">
-        <div class="gc-num">01 &mdash; Otvaram obrt</div>
-        <h3 class="h3">Početnici</h3>
-        <div class="gc-q">"Ne znam odakle početi s otvaranjem obrta — što trebam i kojim redom?"</div>
+        <div class="gc-text">
+          <div class="gc-num">Otvaram obrt</div>
+          <div class="gc-q">"Ne znam odakle početi s otvaranjem obrta — što trebam i kojim redom?"</div>
+        </div>
+        <div class="gc-photo">
+          <div class="gc-circle"></div>
+          <svg class="gc-icon" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="18" y="10" width="64" height="84" rx="7" fill="white" opacity=".95"/>
+            <rect x="36" y="4" width="28" height="12" rx="4" fill="white" opacity=".8"/>
+            <line x1="32" y1="36" x2="68" y2="36" stroke="#3D2D99" stroke-width="3" stroke-linecap="round"/>
+            <line x1="32" y1="50" x2="68" y2="50" stroke="#3D2D99" stroke-width="3" stroke-linecap="round"/>
+            <line x1="32" y1="64" x2="54" y2="64" stroke="#3D2D99" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="70" cy="82" r="16" fill="#5B45D5"/>
+            <polyline points="62,82 68,88 78,74" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
+
       <div class="gc">
-        <div class="gc-num">02 &mdash; Paušalni obrtnik</div>
-        <h3 class="h3">Vođenje knjiga</h3>
-        <div class="gc-q">"Trebam nekoga tko će voditi moje knjige, pratiti rokove i biti dostupan kad imam pitanje."</div>
+        <div class="gc-text">
+          <div class="gc-num">Paušalni obrtnik</div>
+          <div class="gc-q">"Trebam nekoga tko će voditi moje knjige, pratiti rokove i biti dostupan kad imam pitanje."</div>
+        </div>
+        <div class="gc-photo">
+          <div class="gc-circle"></div>
+          <svg class="gc-icon" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="24" width="80" height="66" rx="7" fill="white" opacity=".95"/>
+            <line x1="10" y1="40" x2="90" y2="40" stroke="#E5E7EB" stroke-width="1.5"/>
+            <rect x="21" y="54" width="13" height="26" rx="3" fill="#C4B8FF"/>
+            <rect x="40" y="46" width="13" height="34" rx="3" fill="#7B68EE"/>
+            <rect x="59" y="38" width="13" height="42" rx="3" fill="#5B45D5"/>
+            <rect x="78" y="50" width="13" height="30" rx="3" fill="#3D2D99"/>
+          </svg>
+        </div>
       </div>
+
       <div class="gc">
-        <div class="gc-num">03 &mdash; Proračunska ustanova</div>
-        <h3 class="h3">Proračunsko računovodstvo</h3>
-        <div class="gc-q">"Usklade, knjiženja, tromjesečni izvještaji — meni je to forica, a vama sigurnost da je sve u roku i bez grešaka."</div>
+        <div class="gc-text">
+          <div class="gc-num">Proračunska ustanova</div>
+          <div class="gc-q">"Usklade, knjiženja, tromjesečni izvještaji — u roku i bez grešaka."</div>
+        </div>
+        <div class="gc-photo">
+          <div class="gc-circle"></div>
+          <svg class="gc-icon" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="24" width="54" height="68" rx="6" fill="white" opacity=".7"/>
+            <rect x="22" y="14" width="54" height="68" rx="6" fill="white" opacity=".95"/>
+            <line x1="36" y1="32" x2="64" y2="32" stroke="#3D2D99" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="36" y1="44" x2="64" y2="44" stroke="#3D2D99" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="36" y1="56" x2="56" y2="56" stroke="#3D2D99" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="64" cy="72" r="14" fill="#10B981"/>
+            <polyline points="57,72 63,78 71,64" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
       </div>
+
       <div class="gc">
-        <div class="gc-num">04 &mdash; Učenici &amp; odrasli</div>
-        <h3 class="h3">Instrukcije iz računovodstva</h3>
-        <div class="gc-q">"Trebam nekoga tko će mi računovodstvo objasniti jasno i strpljivo — za školu ili za razumijevanje vlastitih knjiga."</div>
+        <div class="gc-text">
+          <div class="gc-num">Instrukcije iz računovodstva</div>
+          <div class="gc-q">"Trebam nekoga tko će mi računovodstvo objasniti jasno i strpljivo."</div>
+        </div>
+        <div class="gc-photo">
+          <div class="gc-circle"></div>
+          <svg class="gc-icon" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="16" width="50" height="68" rx="5" fill="white" opacity=".95"/>
+            <rect x="16" y="16" width="7" height="68" rx="3" fill="#5B45D5" opacity=".7"/>
+            <line x1="30" y1="34" x2="58" y2="34" stroke="#3D2D99" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30" y1="46" x2="58" y2="46" stroke="#3D2D99" stroke-width="2" stroke-linecap="round"/>
+            <line x1="30" y1="58" x2="48" y2="58" stroke="#3D2D99" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="68" cy="82" r="18" fill="#5B45D5"/>
+            <line x1="60" y1="82" x2="76" y2="82" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="68" y1="74" x2="68" y2="90" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
+
     </div>
-    <p class="growth-note">Svaki od ovih izazova zahtijeva poseban pristup. Bez obzira na kategoriju — uvijek prilagođavam uslugu onome što vaš posao stvarno treba.</p>
   </div>
 </section>
 
@@ -477,7 +585,7 @@
       <div class="label">Što kažu klijenti</div>
       <h2 class="h2">Klijenti koji su nam povjerili svoje knjige.</h2>
     </div>
-    <div class="cs-grid">
+    <div class="cs-grid" id="cs-grid">
       <div class="cs-card">
         <div class="cs-co">
           <div class="cs-logo-box" style="background:linear-gradient(135deg,#5B45D5,#9C7AF2)">A</div>
@@ -485,20 +593,41 @@
         </div>
         <div class="cs-result-box">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nives je uvijek dostupna i sve rješava brzo i točno. Konačno mogu spavati mirno — znam da su moje knjige uredne."</div>
       </div>
-      <div class="cs-card">
+      <div class="cs-card cs-card-extra">
         <div class="cs-co">
           <div class="cs-logo-box" style="background:linear-gradient(135deg,#1A1A2E,#374151)">M</div>
           <div><div class="cs-co-name">Marko Kovač</div><div class="cs-co-type">Paušalni obrt &mdash; IT usluge</div></div>
         </div>
         <div class="cs-result-box">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Konačno imam nekoga tko razumije specifičnosti paušalnog obrta. Profesionalna, pedantna i uvijek na usluzi."</div>
       </div>
-      <div class="cs-card">
+      <div class="cs-card cs-card-extra">
         <div class="cs-co">
           <div class="cs-logo-box" style="background:linear-gradient(135deg,#3D2D99,#5B45D5)">O</div>
           <div><div class="cs-co-name">OŠ Sv. Mateja</div><div class="cs-co-type">Proračunski korisnik</div></div>
         </div>
         <div class="cs-result-box">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suradnja s Nives je bezbrižna — sve izvještaje dobivamo na vrijeme, bez ikakvih problema. Usklade su uvijek točne i dostavljene u roku."</div>
       </div>
+      <div class="cs-card cs-card-extra">
+        <div class="cs-co">
+          <div class="cs-logo-box" style="background:linear-gradient(135deg,#10B981,#059669)">P</div>
+          <div><div class="cs-co-name">Petra Blažević</div><div class="cs-co-type">Paušalni obrt &mdash; kreativne usluge</div></div>
+        </div>
+        <div class="cs-result-box">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nikad nisam imala osjećaj da su moje financije pod kontrolom — sve dok nisam počela raditi s Nives."</div>
+      </div>
+    </div>
+    <div class="cs-show-more" id="cs-show-more">
+      <button class="btn btn-outline" onclick="
+        document.querySelectorAll('.cs-card-extra').forEach(function(c){ c.style.display='block'; });
+        document.getElementById('cs-show-more').style.display='none';
+        document.getElementById('cs-hide').style.display='flex';
+      ">Prikaži više recenzija</button>
+    </div>
+    <div class="cs-show-more" id="cs-hide" style="display:none;">
+      <button class="btn btn-outline" onclick="
+        document.querySelectorAll('.cs-card-extra').forEach(function(c){ c.style.display='none'; });
+        document.getElementById('cs-hide').style.display='none';
+        document.getElementById('cs-show-more').style.display='flex';
+      ">Sakrij recenzije</button>
     </div>
   </div>
 </section>
@@ -506,29 +635,95 @@
 <!-- RESOURCES -->
 <section class="section resources">
   <div class="container">
-    <div class="resources-head">
-      <span class="label">Savjeti i edukacija</span>
-      <h2 class="h2">Ne znaš odakle početi? Počni ovdje.</h2>
-      <p class="sub" style="margin-top:14px;">Korisni savjeti iz prakse — za paušalne obrtnike i sve koji žele razumjeti svoje financije. Bez žargona, jasno i konkretno.</p>
-    </div>
-    <div class="res-grid">
-      <div class="res-card">
-        <div class="res-icon">&#128203;</div>
-        <h3 class="h3">Otvaranje paušalnog obrta</h3>
-        <p>Što trebate pripremiti i kojim redom — korak po korak, od e-obrt prijave do prvih računa.</p>
-        <a href="#kontakt" class="res-link">Saznaj više</a>
+    <div class="res-layout">
+      <div class="res-header">
+        <span class="label">Savjeti i edukacija</span>
+        <h2 class="h2">Ne znaš odakle početi? Počni ovdje.</h2>
+        <p class="sub" style="margin-top:14px;">Korisni savjeti iz prakse — za paušalne obrtnike i sve koji žele razumjeti svoje financije. Bez žargona, jasno i konkretno.</p>
       </div>
-      <div class="res-card">
-        <div class="res-icon">&#128197;</div>
-        <h3 class="h3">Rokovi poreza i doprinosa</h3>
-        <p>Kalendar obveza za paušalne obrtnike — da nikad ne zakasnite s plaćanjem i izbjegnete kazne.</p>
-        <a href="#kontakt" class="res-link">Saznaj više</a>
-      </div>
-      <div class="res-card">
-        <div class="res-icon">&#128202;</div>
-        <h3 class="h3">Knjiga prometa — što je i kako se vodi</h3>
-        <p>Osnove vođenja knjige prometa objašnjene jednostavno — za sve koji žele razumjeti vlastite knjige.</p>
-        <a href="#kontakt" class="res-link">Saznaj više</a>
+      <div class="res-list">
+        <div class="res-row">
+          <div class="res-row-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="28" r="16" fill="var(--purple-pale)"/>
+              <rect x="10" y="14" width="28" height="20" rx="3" stroke="var(--purple-dark)" stroke-width="2" fill="none"/>
+              <line x1="10" y1="20" x2="38" y2="20" stroke="var(--purple-dark)" stroke-width="2"/>
+              <rect x="15" y="24" width="6" height="4" rx="1" fill="var(--purple-dark)"/>
+            </svg>
+          </div>
+          <div class="res-row-body">
+            <button class="res-row-trigger" onclick="this.closest('.res-row').classList.toggle('open')" aria-expanded="false">
+              <h3 class="res-row-title">Otvaranje paušalnog obrta</h3>
+              <span class="res-row-caret">+</span>
+            </button>
+            <div class="res-row-collapse">
+              <p class="res-row-desc">Što trebate pripremiti i kojim redom — korak po korak, od e-obrt prijave do prvih računa.</p>
+              <a href="#kontakt" class="res-row-link">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+        <div class="res-row">
+          <div class="res-row-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="30" r="14" fill="var(--purple-pale)"/>
+              <circle cx="20" cy="22" r="10" stroke="var(--purple-dark)" stroke-width="2" fill="none"/>
+              <text x="20" y="27" text-anchor="middle" font-size="11" font-weight="900" fill="var(--purple-dark)">kn</text>
+              <circle cx="32" cy="34" r="8" stroke="var(--purple-dark)" stroke-width="2" fill="white"/>
+              <text x="32" y="38" text-anchor="middle" font-size="10" font-weight="900" fill="var(--purple-dark)">kn</text>
+            </svg>
+          </div>
+          <div class="res-row-body">
+            <button class="res-row-trigger" onclick="this.closest('.res-row').classList.toggle('open')" aria-expanded="false">
+              <h3 class="res-row-title">Rokovi poreza i doprinosa</h3>
+              <span class="res-row-caret">+</span>
+            </button>
+            <div class="res-row-collapse">
+              <p class="res-row-desc">Kalendar obveza za paušalne obrtnike — da nikad ne zakasnite s plaćanjem i izbjegnete kazne.</p>
+              <a href="#kontakt" class="res-row-link">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+        <div class="res-row">
+          <div class="res-row-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="28" r="16" fill="var(--purple-pale)"/>
+              <rect x="10" y="14" width="28" height="22" rx="3" stroke="var(--purple-dark)" stroke-width="2" fill="none"/>
+              <rect x="14" y="19" width="8" height="8" rx="1" stroke="var(--purple-dark)" stroke-width="1.5" fill="none"/>
+              <line x1="25" y1="20" x2="34" y2="20" stroke="var(--purple-dark)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="25" y1="24" x2="34" y2="24" stroke="var(--purple-dark)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="14" y1="30" x2="34" y2="30" stroke="var(--purple-dark)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="res-row-body">
+            <button class="res-row-trigger" onclick="this.closest('.res-row').classList.toggle('open')" aria-expanded="false">
+              <h3 class="res-row-title">Knjiga prometa — što je i kako se vodi</h3>
+              <span class="res-row-caret">+</span>
+            </button>
+            <div class="res-row-collapse">
+              <p class="res-row-desc">Osnove vođenja knjige prometa objašnjene jednostavno — za sve koji žele razumjeti vlastite knjige.</p>
+              <a href="#kontakt" class="res-row-link">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+        <div class="res-row">
+          <div class="res-row-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="30" r="14" fill="var(--purple-pale)"/>
+              <line x1="14" y1="34" x2="34" y2="14" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round"/>
+              <polyline points="24,14 34,14 34,24" stroke="var(--purple-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="res-row-body">
+            <button class="res-row-trigger" onclick="this.closest('.res-row').classList.toggle('open')" aria-expanded="false">
+              <h3 class="res-row-title">Pitanja koja svaki obrtnik ima</h3>
+              <span class="res-row-caret">+</span>
+            </button>
+            <div class="res-row-collapse">
+              <p class="res-row-desc">Najčešća pitanja iz prakse — od PDV-a i paušalnih stopa do toga kada trebate knjigovođu.</p>
+              <a href="#kontakt" class="res-row-link">Saznaj više</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -600,7 +795,6 @@
         <li><a href="mailto:nives.uplus@gmail.com">nives.uplus@gmail.com</a></li>
         <li><a href="tel:+385921652918">092 165 2918</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=100092866760553" target="_blank">Facebook stranica</a></li>
-        <li><a href="#">Zaprešić &amp; okolica</a></li>
       </ul>
     </div>
     <div class="footer-col">
