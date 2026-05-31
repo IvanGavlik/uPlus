@@ -18,11 +18,7 @@
     <div class="nav-wrap">
       <a href="#" class="logo">
         <div class="logo-mark">
-          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="10" height="15" rx="2" fill="white"/>
-            <rect x="3" y="20" width="6" height="4" rx="1" fill="white" opacity=".6"/>
-            <rect x="15" y="3" width="8" height="8" rx="2" fill="white" opacity=".9"/>
-          </svg>
+          <img src="images/icon.png" alt="uPlus logo" />
         </div>
         uPlus <span class="logo-handwriting">s Nives Lovrić</span>
       </a>
@@ -37,7 +33,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <h1><span class="h1-light">Ako ste zatrpani</span><span class="h1-bold h1-i1">knjigovodstvom,</span><span class="h1-bold h1-i2">tko vodi obrt?</span></h1>
+        <h1><span class="h1-light">Ako ste zatrpani knjigovodstvom,<span class="h1-bold h1-i2">tko vodi obrt?</span></h1>
         <p class="hero-sub">Od otvaranja obrta do urednih knjiga svaki mjesec <em>— sve na jednom mjestu.</em></p>
         <a href="#kontakt" class="btn-hero-cta">Kontaktirajte me &darr;</a>
 
@@ -56,20 +52,13 @@
   <div class="yellow-dot-accent"></div>
 
   <div class="person-wrap">
-    <div class="person-strip">
-      <img src="images/658877332_837743762664508_3341075905555478925_n.jpg" alt="Nives Lovrić" class="person-slide" />
-      <img src="images/672341284_852888567816694_7457869509467304666_n.jpg" alt="Nives Lovrić" class="person-slide" />
-      <img src="images/695102460_871176642654553_2576258027166777360_n.jpg" alt="Nives Lovrić" class="person-slide" />
-      <img src="images/680812258_863120233460194_6010652673970781701_n.jpg" alt="Nives Lovrić" class="person-slide" />
-      <img src="images/647427024_820966907675527_3157216816261283472_n.jpg" alt="Nives Lovrić" class="person-slide" />
-      <img src="images/658877332_837743762664508_3341075905555478925_n.jpg" alt="Nives Lovrić" class="person-slide" />
-    </div>
+    <img src="images/658877332_837743762664508_3341075905555478925_n.jpg" alt="Nives Lovrić" class="person-slide" />
+    <img src="images/672341284_852888567816694_7457869509467304666_n.jpg" alt="Nives Lovrić" class="person-slide" />
+    <img src="images/695102460_871176642654553_2576258027166777360_n.jpg" alt="Nives Lovrić" class="person-slide" />
+    <img src="images/680812258_863120233460194_6010652673970781701_n.jpg" alt="Nives Lovrić" class="person-slide" />
+    <img src="images/647427024_820966907675527_3157216816261283472_n.jpg" alt="Nives Lovrić" class="person-slide" />
   </div>
 
-  <div class="icon-badge">
-    <img src="images/icon.png" alt="uPlus logo" />
-    <span>uPlus</span>
-  </div>
 
   <div class="float-chat">
     <div class="fc-from">Nives, vaša knjigovođa</div>
@@ -134,10 +123,10 @@
 
 
 <!-- O NIVES -->
-<section class="section" style="background:linear-gradient(135deg, #FFF8CC 0%, #D4EFE3 100%);">
+<section class="section" style="background:linear-gradient(135deg, #FFF8F2 0%, #F0E4D4 100%);">
   <div class="container">
     <div class="team-head">
-      <div class="label" style="color:var(--green-dark);">Tko stoji iza uPlus?</div>
+      <div class="label">Tko stoji iza uPlus?</div>
       <h2 class="h2" style="color:var(--black);">Knjigovodstvo s ljudskim licem.</h2>
       <p class="sub" style="margin-top:14px;max-width:620px;color:var(--gray-70);">Nisam samo vaša knjigovođa — tu sam da razumijem vaš posao i pomognem vam da napredujete.</p>
     </div>
@@ -158,7 +147,7 @@
       </div>
 
       <!-- Top right: dark green -->
-      <div class="abt-tr" style="background:#2A7A53;">
+      <div class="abt-tr" style="background:linear-gradient(135deg,#C97040,#E8956A);">
         <div class="abt-tr-text">
           <h3 class="abt-h3">Moj pristup</h3>
           <p>Financije ne moraju biti dosadne. Topla sam i osobna, uvijek dostupna za vaša pitanja — bez čekanja i žargona.</p>
@@ -357,5 +346,68 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const slides = Array.from(document.querySelectorAll('.person-slide'));
+  if (slides.length < 2) return;
+
+  let current = 0;
+  let animating = false;
+
+  slides.forEach((slide, i) => {
+    slide.style.zIndex = slides.length - i;
+    if (i !== 0) {
+      slide.style.clipPath = 'inset(100% 0% 0% 0%)';
+      slide.style.filter   = 'blur(14px)';
+    }
+  });
+
+  function kenBurns(slide) {
+    anime.set(slide, { scale: 1 });
+    anime({ targets: slide, scale: 1.07, duration: 9000, easing: 'linear' });
+  }
+
+  function advance() {
+    if (animating) return;
+    animating = true;
+
+    const next     = (current + 1) % slides.length;
+    const incoming = slides[next];
+
+    incoming.style.zIndex   = slides.length + 1;
+    incoming.style.clipPath = 'inset(100% 0% 0% 0%)';
+    incoming.style.filter   = 'blur(14px)';
+
+    // Wipe: slow reveal from bottom, feathered by the blur bleeding past the clip edge
+    anime({
+      targets:  incoming,
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 2600,
+      easing:   'cubicBezier(0.37, 0, 0.63, 1)',
+      begin:    () => kenBurns(incoming),
+      complete: () => {
+        slides[current].style.zIndex = 1;
+        current   = next;
+        animating = false;
+      }
+    });
+
+    // Blur resolves slightly after the wipe starts — image sharpens as it rises
+    anime({
+      targets:  incoming,
+      filter:   'blur(0px)',
+      duration: 2000,
+      delay:    300,
+      easing:   'easeOutQuad',
+    });
+  }
+
+  kenBurns(slides[0]);
+  setInterval(advance, 6000);
+}());
+</script>
 </body>
 </html>
