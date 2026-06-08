@@ -41,6 +41,26 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase; color: var(--green); margin-bottom: 14px;
 }
 .h2 { font-size: clamp(30px, 4vw, 52px); font-weight: 800; line-height: 1.12; letter-spacing: -1.8px; }
+.h2-gradient {
+  background: linear-gradient(90deg, #E0508A 0%, #F5C030 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.h2-pill {
+  background: var(--yellow);
+  color: #7A1840;
+  border-radius: 100px;
+  padding: 2px 18px 6px;
+  display: inline-block;
+}
+.h2-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+  text-decoration-thickness: 7px;
+  text-underline-offset: 5px;
+  text-decoration-skip-ink: none;
+}
 .sub { font-size: 19px; color: var(--gray-50); line-height: 1.75; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
